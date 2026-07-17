@@ -9,7 +9,7 @@ CREATE TABLE exercises (
     id           BIGSERIAL PRIMARY KEY,
     user_id      BIGINT NOT NULL REFERENCES users(id),
     exercise_name         VARCHAR(100) NOT NULL,
-    muscle_group VARCHAR(50)
+    muscle_group VARCHAR(50),
     UNIQUE (user_id, exercise_name)
 );
 

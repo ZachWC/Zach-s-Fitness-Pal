@@ -11,6 +11,27 @@
 
 ## Entries
 
+### 2026-07-14 · — User.java
+
+## **What I did**
+
+```
+Built out entities, repositories and tested with CommandlineRunner
+```
+
+## **Decisions**
+Flyway owns the schema. Hibernate only validates
+
+## **Blockers / Notes**
+- JPA (jakarta persistance api) - maps java objects to database tables
+
+- Entities
+  - Translation of the table (mirroring).
+  - Constructor is a Hibernate requirement. Can leave empty
+
+## **Next up**
+
+
 ### 2026-07-08 · — Database Config
 
 ## **What I did**
@@ -26,6 +47,7 @@ Flyway owns the schema. Hibernate only validates
 My create table statements live in numbered sdl files in git instead of being typed into psql and lost. Flyway runs any files that haven't run yet at start up so any machine is caught up. 
 Hibernate is verifying that my java is matching my matches my real tables.
 ## **Next up**
+
 
 ### 2026-07-02 · — Initial Setup
 
