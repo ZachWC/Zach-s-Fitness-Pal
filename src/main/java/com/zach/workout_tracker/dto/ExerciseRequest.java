@@ -1,0 +1,9 @@
+package com.zach.workout_tracker.dto;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
+public record ExerciseRequest(
+    @NotBlank @Size(max = 100) String exerciseName,
+    @Size(max = 50) String muscleGroup
+) {}
