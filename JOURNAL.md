@@ -11,6 +11,36 @@
 
 ## Entries
 
+### 2026-08-11 · — WorkoutMapper/WorkoutService
+
+## **What I did**
+
+- WorkoutMapper
+  - job = turn workout from database into json shape that api returns
+
+- WorkoutService 
+  - job = handles workout business logic for user. Mirrors ExerciseService
+
+## **Decisions**
+
+## **Blockers / Notes**
+```
+Data flow review and update:
+```
+- Client sends JSON {"exerciseName": "Bench Press"} ... whatever it is
+- Controller turns JSON into ExerciseRequest and call ExerciseService.create
+- ExerciseService asks UserRepository (DB functions) for user. Either loads User entity or throws 
+  exception.
+  - builds exercise entity (Java mirror for table row) from request
+  - asks ExerciseRepository.save to write it
+- ExerciseRepostory talks to Postgres
+- ExerciseService builds and ExerciseResponse and returns
+- Controller sends JSON back
+- Works similarly for workout
+
+## **Next up**
+- Controllers
+
 ### 2026-08-6 · — Refresh
 
 ## **What I did**
